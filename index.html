@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Paper Submission | RSS 2026</title>
-  <meta name="description" content="Project page for our RSS 2026 submission." />
+  <title>Text-to-Scenario Generation | RSS 2026</title>
+  <meta name="description" content="Project page for the RSS 2026 paper: Text-to-Scenario Generation over Semantic Worlds with Controllable Human Behaviors." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,7 +14,7 @@
   <div class="page">
     <header class="hero">
       <nav class="nav">
-        <div class="logo">MarketGen-style Project</div>
+        <div class="logo">RSS 2026 Paper</div>
         <div class="nav-links">
           <a href="#abstract">Abstract</a>
           <a href="#method">Method</a>
@@ -26,25 +26,20 @@
       <div class="hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">RSS 2026 Submission</p>
-          <h1>Paper Title Goes Here: A Strong, Descriptive Title</h1>
-          <p class="subtitle">Short one-liner that explains your contribution and why it matters.</p>
+          <h1>Text-to-Scenario Generation over Semantic Worlds with Controllable Human Behaviors</h1>
+          <p class="subtitle">Text-to-dynamic scenario generation for social navigation with grounded, controllable human behaviors.</p>
 
           <div class="authors">
             <div class="author-row">
-              <span>First Author</span>
-              <span>Second Author</span>
-              <span>Third Author</span>
-              <span>Fourth Author</span>
+              <span>Anonymous Authors</span>
             </div>
             <div class="affiliations">
-              <span>Institution 1</span>
-              <span>Institution 2</span>
+              <span>Anonymous Institution</span>
             </div>
           </div>
 
           <div class="button-row">
-            <a class="btn primary" href="#">Paper PDF</a>
-            <a class="btn" href="#">arXiv</a>
+            <a class="btn primary" href="paper.pdf">Paper PDF</a>
             <a class="btn" href="#">Code</a>
             <a class="btn" href="#">Video</a>
           </div>
@@ -57,7 +52,7 @@
 
         <div class="hero-media">
           <img src="assets/hero-placeholder.svg" alt="Teaser figure placeholder" />
-          <p class="caption">Figure 1. Replace this teaser with your key result or pipeline graphic.</p>
+          <p class="caption">Figure 1. System pipeline: prompts → semantic worlds → controllable behaviors → simulator-ready scenarios.</p>
         </div>
       </div>
     </header>
@@ -66,13 +61,22 @@
       <section id="abstract" class="section">
         <div class="section-header">
           <h2>Abstract</h2>
-          <p>Swap this placeholder with your abstract. Aim for 150-200 words.</p>
+          <p>Text-to-scenario generation for social navigation in semantically grounded simulation worlds.</p>
         </div>
         <div class="card">
           <p>
-            We present a new approach for robotic decision-making that blends generative modeling with
-            structured planning. Our method synthesizes diverse candidate behaviors, scores them against
-            task-specific constraints, and delivers robust policies in cluttered, real-world scenarios.
+            Social navigation is critical for robots in human environments, yet most simulators evaluate methods in static or
+            oversimplified settings. We propose a text-to-dynamic scenario generator that compiles natural-language prompts
+            into interactive simulation worlds with time-evolving environments and controllable human behaviors. Prompts are
+            transformed into parameterized scenario programs specifying layouts, roles, intents, motion styles, interaction
+            goals, temporal schedules, and exogenous events. Human activity is instantiated via probabilistic, time-varying
+            parameters (e.g., enter → queue → order → sit/move) using behavior trees coupled with LLM-based reasoning and a
+            curated database of behavior models. These behaviors are grounded in semantically annotated zones and regions of
+            interest (e.g., doors, counters, seats), constraining where agents move and which actions they can perform for
+            realistic interaction. To ensure simulator independence, we introduce a unified pedestrian-state wrapper that
+            abstracts over commonly used simulators. Using this approach, we generate realistic social scenarios directly
+            integrable into Gazebo, Isaac Sim, and Unity, and evaluate their realism and usability through commonly utilized
+            metrics and user studies.
           </p>
         </div>
       </section>
@@ -80,14 +84,15 @@
       <section id="method" class="section">
         <div class="section-header">
           <h2>Method Overview</h2>
-          <p>Summarize the pipeline in 3-4 bullet points or short paragraphs.</p>
+          <p>From text prompts to semantically grounded, simulator-ready social navigation scenarios.</p>
         </div>
         <div class="grid two">
           <div class="card">
             <h3>Key Ideas</h3>
-            <p>Explain the core insight driving the work.</p>
-            <p>Describe the modeling choice or algorithmic contribution.</p>
-            <p>Highlight the robotics setting or evaluation conditions.</p>
+            <p>End-to-end pipeline that transforms natural-language prompts into executable interactive worlds and scenarios.</p>
+            <p>Semantic world representation (<code>world.yaml</code>) with ROIs/POIs to ground roles, intents, and behaviors.</p>
+            <p>Unified ROS 2 pedestrian-state wrapper for portability across Gazebo, Isaac Sim, and Unity.</p>
+            <p>Behavior trees + LLM/RAG reasoning with probabilistic, time-varying parameters for realistic human activity.</p>
           </div>
           <div class="card">
             <img src="assets/method-placeholder.svg" alt="Method diagram placeholder" />
@@ -99,24 +104,24 @@
       <section id="results" class="section">
         <div class="section-header">
           <h2>Results</h2>
-          <p>Show your strongest qualitative and quantitative results.</p>
+          <p>Realistic, diverse scenarios evaluated with standard metrics and user studies.</p>
         </div>
         <div class="card">
           <img src="assets/results-placeholder.svg" alt="Results placeholder" />
-          <p class="caption">Figure 3. Replace with results, ablations, or user study outcomes.</p>
+          <p class="caption">Figure 3. Scenario outputs, metrics comparison, and user study summary.</p>
         </div>
         <div class="grid three">
           <div class="stat">
-            <h3>+42%</h3>
-            <p>Success rate improvement</p>
+            <h3>3</h3>
+            <p>Simulators supported</p>
           </div>
           <div class="stat">
-            <h3>3x</h3>
-            <p>Faster planning time</p>
+            <h3>Multi-env</h3>
+            <p>Diverse scenario coverage</p>
           </div>
           <div class="stat">
-            <h3>12 tasks</h3>
-            <p>Real-world benchmarks</p>
+            <h3>User study</h3>
+            <p>Realism & usability</p>
           </div>
         </div>
       </section>
@@ -124,7 +129,7 @@
       <section class="section">
         <div class="section-header">
           <h2>Demo Video</h2>
-          <p>Embed your project video or provide a teaser clip.</p>
+          <p>Embed a walkthrough of the prompt-to-scenario pipeline.</p>
         </div>
         <div class="card video">
           <div class="video-placeholder">
@@ -144,10 +149,10 @@
             <span>bibtex</span>
             <button class="btn small" data-copy="bibtex">Copy</button>
           </div>
-          <pre id="bibtex">@inproceedings{your2026paper,
-  title     = {Paper Title Goes Here},
-  author    = {First Author and Second Author and Third Author},
-  booktitle = {Proceedings of Robotics: Science and Systems},
+          <pre id="bibtex">@inproceedings{anonymous2026text,
+  title     = {Text-to-Scenario Generation over Semantic Worlds with Controllable Human Behaviors},
+  author    = {Anonymous Authors},
+  booktitle = {Robotics: Science and Systems (RSS)},
   year      = {2026}
 }</pre>
         </div>
@@ -155,7 +160,7 @@
     </main>
 
     <footer class="footer">
-      <p>Contact: your.email@institution.edu</p>
+      <p>Contact: anonymous@domain.com</p>
       <p>Last updated: February 3, 2026</p>
     </footer>
   </div>
