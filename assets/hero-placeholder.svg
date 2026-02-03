@@ -1,0 +1,20 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1b26"/>
+      <stop offset="45%" stop-color="#133a4e"/>
+      <stop offset="100%" stop-color="#0c4a6e"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="55%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#fef3c7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#g1)"/>
+  <circle cx="930" cy="160" r="180" fill="url(#g2)" opacity="0.9"/>
+  <circle cx="260" cy="520" r="220" fill="#1d4ed8" opacity="0.35"/>
+  <path d="M1200 480C1020 460 940 520 760 560C580 600 420 600 280 560C140 520 40 520 0 540V700H1200V480Z" fill="#0b1320" opacity="0.65"/>
+  <text x="80" y="140" fill="#f8fafc" font-family="'Arial', sans-serif" font-size="44" font-weight="700">Hero Figure Placeholder</text>
+  <text x="80" y="200" fill="#cbd5f5" font-family="'Arial', sans-serif" font-size="22">Replace with your teaser figure or pipeline overview.</text>
+</svg>

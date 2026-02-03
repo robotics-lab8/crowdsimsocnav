@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paper Submission | RSS 2026</title>
+  <meta name="description" content="Project page for our RSS 2026 submission." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Spectral:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <nav class="nav">
+        <div class="logo">MarketGen-style Project</div>
+        <div class="nav-links">
+          <a href="#abstract">Abstract</a>
+          <a href="#method">Method</a>
+          <a href="#results">Results</a>
+          <a href="#bibtex">BibTeX</a>
+        </div>
+      </nav>
+
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">RSS 2026 Submission</p>
+          <h1>Paper Title Goes Here: A Strong, Descriptive Title</h1>
+          <p class="subtitle">Short one-liner that explains your contribution and why it matters.</p>
+
+          <div class="authors">
+            <div class="author-row">
+              <span>First Author</span>
+              <span>Second Author</span>
+              <span>Third Author</span>
+              <span>Fourth Author</span>
+            </div>
+            <div class="affiliations">
+              <span>Institution 1</span>
+              <span>Institution 2</span>
+            </div>
+          </div>
+
+          <div class="button-row">
+            <a class="btn primary" href="#">Paper PDF</a>
+            <a class="btn" href="#">arXiv</a>
+            <a class="btn" href="#">Code</a>
+            <a class="btn" href="#">Video</a>
+          </div>
+
+          <div class="status">
+            <span class="pill">Under Review</span>
+            <span class="pill ghost">Robotics: RSS 2026</span>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <img src="assets/hero-placeholder.svg" alt="Teaser figure placeholder" />
+          <p class="caption">Figure 1. Replace this teaser with your key result or pipeline graphic.</p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="abstract" class="section">
+        <div class="section-header">
+          <h2>Abstract</h2>
+          <p>Swap this placeholder with your abstract. Aim for 150-200 words.</p>
+        </div>
+        <div class="card">
+          <p>
+            We present a new approach for robotic decision-making that blends generative modeling with
+            structured planning. Our method synthesizes diverse candidate behaviors, scores them against
+            task-specific constraints, and delivers robust policies in cluttered, real-world scenarios.
+          </p>
+        </div>
+      </section>
+
+      <section id="method" class="section">
+        <div class="section-header">
+          <h2>Method Overview</h2>
+          <p>Summarize the pipeline in 3-4 bullet points or short paragraphs.</p>
+        </div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Key Ideas</h3>
+            <p>Explain the core insight driving the work.</p>
+            <p>Describe the modeling choice or algorithmic contribution.</p>
+            <p>Highlight the robotics setting or evaluation conditions.</p>
+          </div>
+          <div class="card">
+            <img src="assets/method-placeholder.svg" alt="Method diagram placeholder" />
+            <p class="caption">Figure 2. Method diagram placeholder.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="results" class="section">
+        <div class="section-header">
+          <h2>Results</h2>
+          <p>Show your strongest qualitative and quantitative results.</p>
+        </div>
+        <div class="card">
+          <img src="assets/results-placeholder.svg" alt="Results placeholder" />
+          <p class="caption">Figure 3. Replace with results, ablations, or user study outcomes.</p>
+        </div>
+        <div class="grid three">
+          <div class="stat">
+            <h3>+42%</h3>
+            <p>Success rate improvement</p>
+          </div>
+          <div class="stat">
+            <h3>3x</h3>
+            <p>Faster planning time</p>
+          </div>
+          <div class="stat">
+            <h3>12 tasks</h3>
+            <p>Real-world benchmarks</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-header">
+          <h2>Demo Video</h2>
+          <p>Embed your project video or provide a teaser clip.</p>
+        </div>
+        <div class="card video">
+          <div class="video-placeholder">
+            <p>Video embed placeholder</p>
+            <span>Replace with an iframe or MP4.</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="bibtex" class="section">
+        <div class="section-header">
+          <h2>BibTeX</h2>
+          <p>Provide the citation for your paper.</p>
+        </div>
+        <div class="card bibtex">
+          <div class="bibtex-header">
+            <span>bibtex</span>
+            <button class="btn small" data-copy="bibtex">Copy</button>
+          </div>
+          <pre id="bibtex">@inproceedings{your2026paper,
+  title     = {Paper Title Goes Here},
+  author    = {First Author and Second Author and Third Author},
+  booktitle = {Proceedings of Robotics: Science and Systems},
+  year      = {2026}
+}</pre>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Contact: your.email@institution.edu</p>
+      <p>Last updated: February 3, 2026</p>
+    </footer>
+  </div>
+
+  <script>
+    const copyButton = document.querySelector('[data-copy="bibtex"]');
+    const bibtex = document.getElementById('bibtex');
+
+    if (copyButton && bibtex) {
+      copyButton.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(bibtex.textContent);
+          copyButton.textContent = 'Copied';
+          setTimeout(() => (copyButton.textContent = 'Copy'), 1500);
+        } catch (err) {
+          copyButton.textContent = 'Copy failed';
+          setTimeout(() => (copyButton.textContent = 'Copy'), 1500);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
