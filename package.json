@@ -1,0 +1,9 @@
+{
+  "name": "rss-paper-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static project page for RSS submission",
+  "scripts": {
+    "dev": "python3 -m http.server 5173"
+  }
+}

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Text-to-Scenario Generation | RSS 2026</title>
-  <meta name="description" content="Project page for the RSS 2026 paper: Text-to-Scenario Generation over Semantic Worlds with Controllable Human Behaviors." />
+  <title>Text-to-Scenario Generation</title>
+  <meta name="description" content="Project page for the paper: Text-to-Scenario Generation over Semantic Worlds with Controllable Human Behaviors." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,18 +14,22 @@
   <div class="page">
     <header class="hero">
       <nav class="nav">
-        <div class="logo">RSS 2026 Paper</div>
+        <div class="logo">Project Page</div>
         <div class="nav-links">
           <a href="#abstract">Abstract</a>
           <a href="#method">Method</a>
+          <a href="#system">System</a>
           <a href="#results">Results</a>
           <a href="#bibtex">BibTeX</a>
         </div>
+        <button class="btn ghost" id="theme-toggle" type="button" aria-label="Toggle light and dark mode">
+          Light mode
+        </button>
       </nav>
 
       <div class="hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">RSS 2026 Submission</p>
+          <p class="eyebrow">Paper Submission</p>
           <h1>Text-to-Scenario Generation over Semantic Worlds with Controllable Human Behaviors</h1>
           <p class="subtitle">Text-to-dynamic scenario generation for social navigation with grounded, controllable human behaviors.</p>
 
@@ -46,13 +50,12 @@
 
           <div class="status">
             <span class="pill">Under Review</span>
-            <span class="pill ghost">Robotics: RSS 2026</span>
           </div>
         </div>
 
         <div class="hero-media">
-          <img src="assets/hero-placeholder.svg" alt="Teaser figure placeholder" />
-          <p class="caption">Figure 1. System pipeline: prompts → semantic worlds → controllable behaviors → simulator-ready scenarios.</p>
+          <img src="assets/newintro.png" alt="Intro pipeline figure" />
+          <p class="caption">Figure 1. Prompt-to-scenario pipeline overview.</p>
         </div>
       </div>
     </header>
@@ -95,8 +98,28 @@
             <p>Behavior trees + LLM/RAG reasoning with probabilistic, time-varying parameters for realistic human activity.</p>
           </div>
           <div class="card">
-            <img src="assets/method-placeholder.svg" alt="Method diagram placeholder" />
-            <p class="caption">Figure 2. Method diagram placeholder.</p>
+            <img src="assets/scenariogen.png" alt="Scenario generation pipeline diagram" />
+            <p class="caption">Figure 2. Scenario generation pipeline.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="system" class="section">
+        <div class="section-header">
+          <h2>System Design</h2>
+          <p>Integrated pipeline for scene construction, semantic grounding, and agent behavior synthesis.</p>
+        </div>
+        <div class="grid two">
+          <div class="card">
+            <img src="assets/newsystemdesign.png" alt="System design diagram" />
+            <p class="caption">Figure 3. System design and component interactions.</p>
+          </div>
+          <div class="card">
+            <h3>Design Highlights</h3>
+            <p>RAG + LLM parsing for prompt canonicalization and ROI selection.</p>
+            <p>World scan map with semantic representation in <code>world.yaml</code>.</p>
+            <p>Behavior trees with probabilistic parameters and a social force model for interactive simulation.</p>
+            <p>Cross-simulator portability with a unified pedestrian state wrapper.</p>
           </div>
         </div>
       </section>
@@ -107,8 +130,8 @@
           <p>Realistic, diverse scenarios evaluated with standard metrics and user studies.</p>
         </div>
         <div class="card">
-          <img src="assets/results-placeholder.svg" alt="Results placeholder" />
-          <p class="caption">Figure 3. Scenario outputs, metrics comparison, and user study summary.</p>
+          <img src="assets/newevalpic1.png" alt="Evaluation results and tables" />
+          <p class="caption">Figure 4. Quantitative evaluation and comparison tables.</p>
         </div>
         <div class="grid three">
           <div class="stat">
@@ -132,10 +155,10 @@
           <p>Embed a walkthrough of the prompt-to-scenario pipeline.</p>
         </div>
         <div class="card video">
-          <div class="video-placeholder">
-            <p>Video embed placeholder</p>
-            <span>Replace with an iframe or MP4.</span>
-          </div>
+          <video class="video-embed" controls preload="metadata" poster="assets/newintro.png">
+            <source src="finalvideo.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </section>
 
@@ -152,7 +175,7 @@
           <pre id="bibtex">@inproceedings{anonymous2026text,
   title     = {Text-to-Scenario Generation over Semantic Worlds with Controllable Human Behaviors},
   author    = {Anonymous Authors},
-  booktitle = {Robotics: Science and Systems (RSS)},
+  booktitle = {Conference Submission},
   year      = {2026}
 }</pre>
         </div>
@@ -166,6 +189,29 @@
   </div>
 
   <script>
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('theme-toggle');
+
+    const setTheme = (theme) => {
+      root.setAttribute('data-theme', theme);
+      if (themeToggle) {
+        themeToggle.textContent = theme === 'light' ? 'Dark mode' : 'Light mode';
+      }
+      localStorage.setItem('theme', theme);
+    };
+
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme === 'light' || storedTheme === 'dark') {
+      setTheme(storedTheme);
+    }
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const current = root.getAttribute('data-theme') || 'dark';
+        setTheme(current === 'dark' ? 'light' : 'dark');
+      });
+    }
+
     const copyButton = document.querySelector('[data-copy="bibtex"]');
     const bibtex = document.getElementById('bibtex');
 
